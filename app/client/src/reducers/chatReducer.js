@@ -1,12 +1,12 @@
 const initialState = {
-  example: ''
+  chat: ''
 }
 
 export default function (state = initialState, action) {
   switch (action.type) {
     // add actions here
-    case 'EXAMPLE':
-      return {...state, example: action.example}
+    case 'GET_CHAT':
+      return {...state, chat: action.payload}
     default:
       return state
   }

@@ -7,10 +7,10 @@ axios.defaults.baseURL = '/api'
 const socket = io.connect()
 
 export function makeACall() {
-  axios.get('/example').then(resp => {
+  axios.get('/chatroom').then(resp => {
     store.dispatch({
-      type: 'EXAMPLE', 
-      example: resp.data.example
+      type: 'GET_CHAT', 
+      payload: resp.data.chat
     })
   })
 }

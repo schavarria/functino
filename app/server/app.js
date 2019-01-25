@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import Router from './routes/example'
+import Router from './routes/chatRoute'
 
 const app = express()
 

@@ -1,7 +1,7 @@
 import express from 'express'
 const Router = express.Router()
 
-Router.get('/example', (req, res, next) => {
+Router.get('/chatroom', (req, res, next) => {
   res.json({
     example: 'example'
   })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { makeACall, connectToSocketServer } from '../actions/example'
+import { makeACall, connectToSocketServer } from '../actions/chatActions'
 
 class Home extends Component {
   componentDidMount() {
@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-        <p>{this.props.example}</p>
+        <p>{this.props.chat}</p>
       </div>
     )
   }
@@ -19,7 +19,7 @@ class Home extends Component {
 
 function mapStateToProps(appState) {
   return {
-    example: appState.exampleReducer.example
+    chat: appState.chatReducer.chat
   }
 }
 
