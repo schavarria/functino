@@ -1,12 +1,12 @@
 const initialState = {
-  chat: ''
+  messages: []
 }
 
 export default function (state = initialState, action) {
   switch (action.type) {
     // add actions here
-    case 'GET_CHAT':
-      return {...state, chat: action.payload}
+    case 'ADD_MESSAGE':
+      return {...state, message: [...state.message, action.payload]}
     default:
       return state
   }

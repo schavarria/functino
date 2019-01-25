@@ -1,17 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { makeACall, connectToSocketServer } from '../actions/chatActions'
+import {addMessage} from '../actions/chatActions'
 
 class Home extends Component {
-  componentDidMount() {
-    makeACall()
-  }
+state = {
+  message:''
+}
+
+handleChange = e => {
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+}
+
+handleSubmit = e => {
+  e.preventDefault()
+  addMessage(this.state.message)
+}
   
   render() {
     return (
       <div>
-        <h1>Home</h1>
-        <p>{this.props.chat}</p>
+        <form autoComplete="off" onSubmit={this.handlSubmit}>
+          <input type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="room">
+        {this.props.messages.map(message =>(
+          <p>{message.message}</p>
+        ))}
+
+        </div>
       </div>
     )
   }
@@ -19,7 +38,7 @@ class Home extends Component {
 
 function mapStateToProps(appState) {
   return {
-    chat: appState.chatReducer.chat
+    message: appState.chatReducer.message
   }
 }
 
