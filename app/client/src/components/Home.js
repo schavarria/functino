@@ -16,20 +16,24 @@ handleChange = e => {
 handleSubmit = e => {
   e.preventDefault()
   addMessage(this.state.message)
+  console.log(this.state.message)
+  this.setState({
+    message: ''
+})
 }
   
   render() {
     return (
       <div>
-        <form autoComplete="off" onSubmit={this.handlSubmit}>
+        <form autoComplete="off" onSubmit={this.handleSubmit}>
           <input type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
           <button type="submit">Submit</button>
+          
         </form>
         <div id="room">
         {this.props.messages.map(message =>(
           <p>{message.message}</p>
         ))}
-
         </div>
       </div>
     )
@@ -38,7 +42,7 @@ handleSubmit = e => {
 
 function mapStateToProps(appState) {
   return {
-    message: appState.chatReducer.message
+    messages: appState.chatReducer.messages
   }
 }
 

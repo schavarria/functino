@@ -6,7 +6,7 @@ export default function (state = initialState, action) {
   switch (action.type) {
     // add actions here
     case 'ADD_MESSAGE':
-      return {...state, message: [...state.message, action.payload]}
+      return {...state, messages: [...state.messages, action.payload]}
     default:
       return state
   }

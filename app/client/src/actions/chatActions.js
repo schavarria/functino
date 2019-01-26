@@ -7,11 +7,12 @@ axios.defaults.baseURL = '/api'
 
 const socket = io.connect('http://localhost:3001')
 
-export function addMessage(message){
-socket.emit('new message',{
-    message: message
-})
-} 
+export function addMessage(message) {
+    socket.emit('new message', {
+        message: message
+    })
+
+}
 
 socket.on('new message', (message) => {
     store.dispatch({
@@ -19,3 +20,4 @@ socket.on('new message', (message) => {
         payload: message
     })
 })
+
