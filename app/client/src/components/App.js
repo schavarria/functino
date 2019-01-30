@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from '../store'
 
 import Home from './Home'
+import Signin from './Signin'
 
 class App extends Component {
   render() {
@@ -11,7 +12,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Route path="/" exact component={Home} />
+           
+          <Route path="/" exact component={Signin} />
+          <Route path="/:roomname" component={Home} />
           </div>
         </Router>
       </Provider>
