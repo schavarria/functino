@@ -7,6 +7,7 @@ html {box-sizing:border-box;}
     margin: auto;
     border: double rgb(30, 99, 228);
     background-color: rgb(147, 194, 238);
+    display: flex;
 
 }
 
@@ -36,4 +37,14 @@ html {box-sizing:border-box;}
     width: 475px;
     border-top: 1px solid gray;
    
+}
+
+.roomUsername{
+    margin-left: 10px;
+    color:rgb(0, 0, 214);
+}
+
+.sendbutton{
+    color:white;
+    background: rgb(144, 144, 155);
 }

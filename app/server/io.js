@@ -12,6 +12,12 @@ export default function(server) {
     socket.on('new message',(message) => {
       io.to(message.roomname).emit('new message', message)
     })
+
+    socket.on('new channel',(channel) => {
+      socket.join(channel)
+      socket.emit('new channel', channel)
+    })
+
     console.log('User has connected to socket server')
   })
 }

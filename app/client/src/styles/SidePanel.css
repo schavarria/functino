@@ -1,12 +1,28 @@
 html {box-sizing:border-box;}
 *,* :after, *:before {box-sizing:inherit;}
 
+a{
+    text-decoration: none;
+}
+
 li{
     list-style: none;
-
+    
 }
 .sidepanelCon{
     width: 125px;
-    height: 100%;
     background: rgb(63, 100, 156);
+    border-right: dotted white
+}
+
+.channelNames{
+    color:white;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.addchannel{
+    align-content: center;
+    color:rgb(174, 119, 226);
+    text-decoration: underline;
 }

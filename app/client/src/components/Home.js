@@ -56,21 +56,23 @@ handleSubmit = e => {
     return (
       <div className="mainCon">
         <SidePanel />
-        <div id='roomWrap'>
-          <div className="chatCon" ref='messages'>
-            {this.props.messages.map((message, i) => (
-                  <p key={message.roomname + '-message-' + i}>
-                    <span className="roomUsername">{this.props.username}</span>: {message.message}
-                  </p>
-                ))}
+          <div>
+            <div id='roomWrap'>
+              <div className="chatCon" ref='messages'>
+                {this.props.messages.map((message, i) => (
+                      <p key={message.roomname + '-message-' + i}>
+                        <span className="roomUsername">{this.props.username}</span>: {message.message}
+                      </p>
+                    ))}
+              </div>
+            </div>
+            <div className="sendMessageCon">
+              <form autoComplete="off" onSubmit={this.handleSubmit}>
+                <input className="messageBar" type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
+                <button className="sendbutton" type="submit">Send</button>
+              </form>
+            </div>
           </div>
-        </div>
-        <div className="sendMessageCon">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <input className="messageBar" type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
-            <button type="submit">Send</button>
-          </form>
-        </div>
       </div>
     )
   }

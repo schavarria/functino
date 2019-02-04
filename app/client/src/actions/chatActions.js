@@ -30,6 +30,18 @@ export function assignUsername(username){
     return promise
 }
 
+export function addChannel(channel){
+    socket.emit('new channel', channel)
+        
+} 
+
+socket.on('new channel', (channel) => {
+    store.dispatch({
+        type: 'ADD_CHANNEL',
+        payload: channel
+    })
+})
+
 socket.on('new message', (message) => {
     store.dispatch({
         type:'ADD_MESSAGE',

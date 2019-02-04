@@ -1,8 +1,9 @@
 {
   "db": {
     "host": "localhost",
-    "user": "",
-    "password": "",
-    "database": ""
-  }
+    "user": "functino",
+    "password": "functino",
+    "database": "functino"
+  },
+  "jwtsecret":"g7zSkb$MAwg6e<pT"
 }
